@@ -1,12 +1,13 @@
+// import { serverSideFunction } from "@/utils/server-utils";
 "use client";
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { serverSideFunction } from "@/utils/server-utils";
-
-export default function ClientRoutePage() {
+export default function ServerRoutePage() {
+  console.log("Server route rendered");
+  // const result = serverSideFunction();
   const settings = {
     dots: true,
   };
