@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,25 +20,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <header
-          style={{
-            backgroundColor: "lightblue",
-            padding: "1rem",
-          }}
-        >
-          <p>Header</p>
-        </header>
-        {children}
-        <footer
-          style={{
-            backgroundColor: "ghostwhite",
-            padding: "1rem",
-          }}
-        >
-          <p>footer</p>
-        </footer>
-      </body>
+      <ThemeProvider>
+        <body className={inter.className}>
+          <header
+            style={{
+              backgroundColor: "lightblue",
+              padding: "1rem",
+            }}
+          >
+            <p>Header</p>
+          </header>
+          {children}
+          <footer
+            style={{
+              backgroundColor: "ghostwhite",
+              padding: "1rem",
+            }}
+          >
+            <p>footer</p>
+          </footer>
+        </body>
+      </ThemeProvider>
     </html>
   );
 }
