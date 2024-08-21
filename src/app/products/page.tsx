@@ -7,7 +7,7 @@ type Product = {
 
 export default async function ProductsPage() {
   const response = await fetch("http://localhost:3001/products", {
-    cache: "no-store",
+    next: { revalidate: 10 },
   });
   const products = await response.json();
   return (
